@@ -1,0 +1,36 @@
+{
+    "name": "mars-lib/scaffold",
+    "license": "MIT",
+    "description": "a php simple scaffold",
+    "authors": [
+        {
+            "name": "MarsLib",
+            "email": "marslibss@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.0",
+        "ext-pdo": "*",
+        "ext-mongodb": "*",
+        "ext-redis": "*",
+        "ext-json": "*",
+        "mongodb/mongodb": "^1.4",
+        "seld/jsonlint": "^1.7",
+        "symfony/http-foundation": "^4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "MarsLab\\": "src/"
+        },
+        "files": [
+            "helpers/common.php",
+            "helpers/array.php",
+            "helpers/string.php",
+            "helpers/parameter.php",
+            "helpers/system.php"
+        ]
+    },
+    "require-dev": {
+        "symfony/var-dumper": "^4.1"
+    }
+}
