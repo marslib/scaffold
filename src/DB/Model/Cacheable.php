@@ -1,6 +1,6 @@
 <?php
-namespace MarsLib\Db\Model;
-use MarsLib\Redis\Redis;
+namespace MarsLib\Scaffold\Db\Model;
+use MarsLib\Scaffold\Redis\Redis;
 //Warning: mulReplace方法调用，不支持自动清缓存
 class CacheAble extends Base
 {

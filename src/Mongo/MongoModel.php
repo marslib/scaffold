@@ -1,7 +1,7 @@
 <?php
-namespace MarsLib\Mongo;
+namespace MarsLib\Scaffold\Mongo;
 
-use MarsLib\Common\Config;
+use MarsLib\Scaffold\Common\Config;
 use MongoDB\BSON\ObjectId;
 use MongoDB\BSON\Regex;
 use MongoDB\BSON\Timestamp;
@@ -47,7 +47,7 @@ class MongoModel
     }
 
     /**
-     * @return \MarsLib\Mongo\MongoModel
+     * @return \MarsLib\Scaffold\Mongo\MongoModel
      */
     public static function getInstance()
     {

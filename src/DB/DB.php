@@ -1,7 +1,7 @@
 <?php
-namespace MarsLib\Db;
+namespace MarsLib\Scaffold\Db;
 
-use MarsLib\Common\ETS;
+use MarsLib\Scaffold\Common\ETS;
 use \PDO;
 
 class DB

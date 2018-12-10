@@ -1,5 +1,5 @@
 <?php
-namespace MarsLib\Mongo;
+namespace MarsLib\Scaffold\Mongo;
 
 class MongoDataVersion extends MongoModel
 {

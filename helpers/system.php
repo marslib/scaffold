@@ -120,6 +120,6 @@ function model($model_name, $db_cluster_id = null)
         $db_cluster_id = DEFAULT_CLUSTER_ID;
     }
 
-    return new \MarsLib\Db\Model\Base($model_name, $db_cluster_id);
+    return new \MarsLib\Scaffold\Db\Model\Base($model_name, $db_cluster_id);
 }
 

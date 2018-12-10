@@ -1,7 +1,7 @@
 <?php
-namespace MarsLib\Db;
+namespace MarsLib\Scaffold\Db;
 
-use MarsLib\Common\Config;
+use MarsLib\Scaffold\Common\Config;
 
 class GlobalDb extends DB {
 
@@ -21,7 +21,7 @@ class GlobalDb extends DB {
      *
      * @param integer $clusterId
      * @param boolean $singleton 是否使用单例模式
-     * @return \MarsLib\Db\GlobalDb|bool
+     * @return \MarsLib\Scaffold\Db\GlobalDb|bool
      */
     public static function getInstance($clusterId, $singleton = TRUE)
     {

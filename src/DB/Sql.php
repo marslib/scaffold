@@ -1,5 +1,5 @@
 <?php
-namespace MarsLib\Db;
+namespace MarsLib\Scaffold\Db;
 
 class Sql
 {

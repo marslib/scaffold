@@ -1,5 +1,5 @@
 <?php
-namespace MarsLib\Cache;
+namespace MarsLib\Scaffold\Cache;
 
 class FileCache
 {

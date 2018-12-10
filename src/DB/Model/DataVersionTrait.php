@@ -1,7 +1,7 @@
 <?php
-namespace MarsLib\DB\Model;
+namespace MarsLib\Scaffold\DB\Model;
 
-use MarsLib\Db\DataVersion;
+use MarsLib\Scaffold\Db\DataVersion;
 
 trait DataVersionTrait
 {

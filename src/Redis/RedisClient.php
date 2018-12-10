@@ -1,8 +1,8 @@
 <?php
-namespace MarsLib\Redis;
+namespace MarsLib\Scaffold\Redis;
 
-use MarsLib\Common\Config;
-use MarsLib\Common\ETS;
+use MarsLib\Scaffold\Common\Config;
+use MarsLib\Scaffold\Common\ETS;
 
 Class RedisClient
 {

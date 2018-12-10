@@ -1,5 +1,5 @@
 <?php
-namespace MarsLib\Db\Model;
+namespace MarsLib\Scaffold\Db\Model;
 
 class SortAble extends Base
 {

@@ -1,5 +1,5 @@
 <?php
-namespace MarsLib\Common;
+namespace MarsLib\Scaffold\Common;
 
 class RoleModel {
     const ROLE_ADMIN = 1;

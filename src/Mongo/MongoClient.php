@@ -1,7 +1,7 @@
 <?php
-namespace MarsLib\Mongo;
+namespace MarsLib\Scaffold\Mongo;
 
-use MarsLib\Common\Config;
+use MarsLib\Scaffold\Common\Config;
 use MongoDB\Client;
 
 class MongoClient

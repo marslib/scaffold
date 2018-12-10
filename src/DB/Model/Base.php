@@ -1,9 +1,9 @@
 <?php
-namespace MarsLib\Db\Model;
+namespace MarsLib\Scaffold\Db\Model;
 
-use MarsLib\Db\Sql;
-use MarsLib\Db\GlobalDb;
-use MarsLib\Db\FarmDb;
+use MarsLib\Scaffold\Db\Sql;
+use MarsLib\Scaffold\Db\GlobalDb;
+use MarsLib\Scaffold\Db\FarmDb;
 
 class Base
 {
@@ -17,9 +17,9 @@ class Base
     //Used with farm db
     protected $_objectId      = null;
     protected $_eventHandlers = [];
-    /** @var \MarsLib\Db\DB */
+    /** @var \MarsLib\Scaffold\Db\DB */
     private $_dbInstance = null;
-    /** @var \MarsLib\Db\Sql|null */
+    /** @var \MarsLib\Scaffold\Db\Sql|null */
     protected $_sqlHelper         = null;
     private   $_lastSql;
     private   $_cache             = [];

@@ -1,11 +1,11 @@
 <?php
-namespace MarsLib\Common;
+namespace MarsLib\Scaffold\Common;
 
 class Scaffold
 {
 
     protected $model_class;
-    /** @var \MarsLib\Db\Model\Base */
+    /** @var \MarsLib\Scaffold\Db\Model\Base */
     protected $model;
     protected $request;
     protected $permission;
