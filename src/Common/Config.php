@@ -1,5 +1,5 @@
 <?php
-namespace MarsLab\Common;
+namespace MarsLib\Common;
 
 /**
  * 全局配制接口文件

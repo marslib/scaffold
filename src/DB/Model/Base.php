@@ -1,9 +1,9 @@
 <?php
-namespace MarsLab\Db\Model;
+namespace MarsLib\Db\Model;
 
-use MarsLab\Db\Sql;
-use MarsLab\Db\GlobalDb;
-use MarsLab\Db\FarmDb;
+use MarsLib\Db\Sql;
+use MarsLib\Db\GlobalDb;
+use MarsLib\Db\FarmDb;
 
 class Base
 {
@@ -17,9 +17,9 @@ class Base
     //Used with farm db
     protected $_objectId      = null;
     protected $_eventHandlers = [];
-    /** @var \MarsLab\Db\DB */
+    /** @var \MarsLib\Db\DB */
     private $_dbInstance = null;
-    /** @var \MarsLab\Db\Sql|null */
+    /** @var \MarsLib\Db\Sql|null */
     protected $_sqlHelper         = null;
     private   $_lastSql;
     private   $_cache             = [];

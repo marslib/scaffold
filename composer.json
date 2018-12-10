@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MarsLab\\": "src/"
+            "MarsLib\\": "src/"
         },
         "files": [
             "helpers/common.php",

@@ -1,8 +1,8 @@
 <?php
-namespace MarsLab\Redis;
+namespace MarsLib\Redis;
 
-use MarsLab\Common\Config;
-use MarsLab\Common\ETS;
+use MarsLib\Common\Config;
+use MarsLib\Common\ETS;
 
 Class RedisClient
 {

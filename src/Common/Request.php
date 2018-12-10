@@ -1,5 +1,5 @@
 <?php
-namespace MarsLab\Common;
+namespace MarsLib\Common;
 
 class Request
 {

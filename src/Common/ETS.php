@@ -1,5 +1,5 @@
 <?php
-namespace MarsLab\Common;
+namespace MarsLib\Common;
 
 /**
  * 执行时间统计

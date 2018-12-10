@@ -1,5 +1,5 @@
 <?php
-namespace MarsLab\Redis;
+namespace MarsLib\Redis;
 
 class Redis
 {

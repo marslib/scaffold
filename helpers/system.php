@@ -1,6 +1,6 @@
 <?php
 
-use MarsLab\Common\Config;
+use MarsLib\Common\Config;
 
 function is_prod()
 {
@@ -120,6 +120,6 @@ function model($model_name, $db_cluster_id = null)
         $db_cluster_id = DEFAULT_CLUSTER_ID;
     }
 
-    return new \MarsLab\Db\Model\Base($model_name, $db_cluster_id);
+    return new \MarsLib\Db\Model\Base($model_name, $db_cluster_id);
 }
 

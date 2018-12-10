@@ -1,5 +1,5 @@
 <?php
-namespace MarsLab\Db;
+namespace MarsLib\Db;
 
 class FarmDb
 {
