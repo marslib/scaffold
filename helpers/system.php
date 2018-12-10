@@ -123,3 +123,49 @@ function model($model_name, $db_cluster_id = null)
     return new \MarsLib\Scaffold\Db\Model\Base($model_name, $db_cluster_id);
 }
 
+function get_client_ip()
+{
+    if (getenv('HTTP_CLIENT_IP')) {
+        $ip = getenv('HTTP_CLIENT_IP');
+    }
+    elseif (getenv('HTTP_X_FORWARDED_FOR')) {
+        $ip = getenv('HTTP_X_FORWARDED_FOR');
+    }
+    elseif (getenv('HTTP_X_FORWARDED')) {
+        $ip = getenv('HTTP_X_FORWARDED');
+    }
+    elseif (getenv('HTTP_FORWARDED_FOR')) {
+        $ip = getenv('HTTP_FORWARDED_FOR');
+    }
+    elseif (getenv('HTTP_FORWARDED')) {
+        $ip = getenv('HTTP_FORWARDED');
+    }
+    else {
+        $ip = $_SERVER['REMOTE_ADDR'];
+    }
+    if ($pos=strpos($ip, ',')){
+        $ip = substr($ip,0,$pos);
+    }
+    return $ip;
+}
+
+function response($data, $code = CODE_SUCC, $message = '')
+{
+    $ret = [
+        'code' => $code,
+        'data' => $data,
+    ];
+    $error = $message ? ($GLOBALS['CODE_MESSAGES'][$code] ?? '') : $message;
+    if ($error) {
+        $ret['error'] = $error;
+    }
+
+    header("Cache-Control: no-cache");
+    header("Pragma: no-cache");
+    header('Content-Type: application/json; charset=UTF-8');
+
+    echo json_encode($ret, JSON_UNESCAPED_UNICODE);
+
+    return FALSE;
+}
+
