@@ -153,7 +153,7 @@ function response($data, $code = CODE_SUCC, $message = '')
 {
     $ret = [
         'code' => $code,
-        'data' => $data,
+        'data' => $data ? $data : (object)[],
     ];
     $error = $message ? ($GLOBALS['CODE_MESSAGES'][$code] ?? '') : $message;
     if ($error) {

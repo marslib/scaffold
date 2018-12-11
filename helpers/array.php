@@ -150,9 +150,11 @@ function array_change_v2k(&$arr, $column)
     $arr = $newArr;
 }
 
-function array_last($arr)
-{
-    return $arr[count($arr) - 1];
+if(!function_exists('array_last')) {
+    function array_last($arr)
+    {
+        return $arr[count($arr) - 1];
+    }
 }
 
 /**
