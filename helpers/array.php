@@ -361,3 +361,30 @@ function array_remove($arr, $val)
         return !in_array($item, $val);
     });
 }
+
+/**
+ * 根据二维数组的部分进行查找
+ * @param array $arr 原始数组
+ * @param array $match 待查询数组
+ * @return array
+ */
+function array_match($arr, $match) {
+    $m = [];
+    foreach($arr as $item) {
+        if(@array_intersect($item, $match)) {
+            $m[] = $item;
+        }
+    }
+    return $m;
+}
+
+function array_get_by_keys($arr, $keys = []) {
+    if(!$keys) {
+        return $arr;
+    }
+    $tmp = [];
+    foreach($keys as $key) {
+        $tmp[$key] = $arr[$key] ?? null;
+    }
+    return $tmp;
+}
