@@ -1,7 +1,6 @@
 <?php
 
-use MarsLib\Common\Config;
-
+use MarsLib\Scaffold\Common\Config;
 function is_prod()
 {
     if(defined('ENV')) {
