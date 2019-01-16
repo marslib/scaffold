@@ -268,3 +268,8 @@ function is_json_str($str, $comment_mode = false)
 
     return $lint ? $lint->getMessage() : $lint;
 }
+
+function rm_whitespace($str)
+{
+    return preg_replace('/\s(?=)/', '', $str);
+}

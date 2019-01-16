@@ -140,7 +140,7 @@ function get_client_ip()
         $ip = getenv('HTTP_FORWARDED');
     }
     else {
-        $ip = $_SERVER['REMOTE_ADDR'];
+        $ip = $_SERVER['REMOTE_ADDR'] ?? '';
     }
     if ($pos=strpos($ip, ',')){
         $ip = substr($ip,0,$pos);
