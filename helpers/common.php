@@ -56,3 +56,29 @@ function filter_bool($val)
 
     return true;
 }
+
+function write_file($file_path, $str, $mode = 'w')
+{
+    $handel = fopen($file_path, $mode);
+    if(!$handel) {
+        return false;
+    }
+    fwrite($handel, $str);
+    fclose($handel);
+    return true;
+}
+
+function read_file($path)
+{
+    $handle = fopen($path, "r");
+    $data = [];
+    if(!$handle) {
+        return false;
+    }
+    while(($line = fgets($handle)) !== false) {
+        $line = trim($line);
+        $data[] = $line;
+    }
+    fclose($handle);
+    return $data;
+}
