@@ -32,8 +32,10 @@ class MongoClient
             return null;
         }
         // mongodb://127.0.0.1:27017/admin:admin
-        $uri = "mongodb://{$physical['host']}:{$physical['port']}/" . (($physical['user'] ?? false) && ($physical['pwd'] ?? false) ? "{$physical['user']}:{$physical['pwd']}" : "");
-        self::$_instances[$clusterId] = new Client($uri);
+        $uri = "mongodb://{$physical['host']}";
+        $option = $physical;
+        unset($option['host']);
+        self::$_instances[$clusterId] = new Client($uri, $option);
         self::$_client = self::$_instances[$clusterId];
         return self::$_instances[$clusterId];
     }
