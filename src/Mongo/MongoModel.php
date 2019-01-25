@@ -257,10 +257,12 @@ class MongoModel
         return $options;
     }
 
-    public function beforeInsert(&$dco)
-    {
+    public function beforeInsert(&$dco) {
         if($this->auto_create_at) {
             $dco['create_at'] = time();
+        }
+        if($this->auto_update_at) {
+            $dco['update_at'] = time();
         }
     }
 
@@ -269,7 +271,11 @@ class MongoModel
         $this->log($id, MongoDataVersion::METHOD_CREATE, $doc);
     }
 
-    public function beforeUpdate($filter, &$doc) { }
+    public function beforeUpdate($filter, &$doc) {
+        if($this->auto_update_at) {
+            $doc['update_at'] = time();
+        }
+    }
 
     public function afterUpdate($filter, &$doc, $id)
     {
