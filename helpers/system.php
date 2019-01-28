@@ -168,3 +168,37 @@ function response($data, $code = CODE_SUCC, $message = '')
     return FALSE;
 }
 
+function serializeTrace($traces):string {
+    $default_trace = [
+        'file'     => 'unknown',
+        'line'     => 0,
+        'function' => 'unknown'
+    ];
+    $r = '';
+    foreach ($traces as $i => $t) {
+        $t = $t + $default_trace;
+        $r .= "#$i {$t['file']}({$t['line']}): ";
+        if (isset($t['object']) and is_object($t['object'])) {
+            $r .= get_class($t['object']).'->';
+        }
+        $r .= "{$t['function']}()\n";
+    }
+
+    return $r;
+}
+
+function get_last_error($depth = 1)
+{
+    $error = error_get_last();
+    $log =  '';
+    if (!empty($error)) {
+        $log = "Shutdown Error: [{$error['type']}] {$error['message']} ". "in {$error['file']}:{$error['line']}";
+        $backtrace = debug_backtrace();
+        if(!empty($backtrace[$depth - 1]) && is_array($backtrace[$depth - 1])) {
+            $file = $backtrace[$depth - 1]['file'];
+            $file = basename(dirname($file)) . '/' . basename($file);
+            $log  .=  "\nStack trace: {$file} " . $backtrace[$depth - 1]['line'];
+        }
+    }
+    return $log;
+}
