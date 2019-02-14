@@ -153,7 +153,7 @@ function array_change_v2k(&$arr, $column)
 if(!function_exists('array_last')) {
     function array_last($arr)
     {
-        return $arr[count($arr) - 1];
+        return $arr[count($arr) - 1] ?? '';
     }
 }
 

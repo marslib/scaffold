@@ -195,9 +195,9 @@ function get_last_error($depth = 1)
         $log = "Shutdown Error: [{$error['type']}] {$error['message']} ". "in {$error['file']}:{$error['line']}";
         $backtrace = debug_backtrace();
         if(!empty($backtrace[$depth - 1]) && is_array($backtrace[$depth - 1])) {
-            $file = $backtrace[$depth - 1]['file'];
+            $file = $backtrace[$depth - 1]['file'] ?? '';
             $file = basename(dirname($file)) . '/' . basename($file);
-            $log  .=  "\nStack trace: {$file} " . $backtrace[$depth - 1]['line'];
+            $log  .=  "\nStack trace: {$file} " . ($backtrace[$depth - 1]['line'] ?? '');
         }
     }
     return $log;

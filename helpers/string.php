@@ -273,3 +273,14 @@ function rm_whitespace($str)
 {
     return preg_replace('/\s(?=)/', '', $str);
 }
+
+function str_has($source_str, $sub_str) {
+    $sub = explode('|', $sub_str);
+    $has = false;
+    foreach($sub as $item) {
+        if(strpos($source_str, $item) !== false) {
+            $has = true;
+        }
+    }
+    return $has;
+}

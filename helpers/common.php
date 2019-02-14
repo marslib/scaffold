@@ -1,4 +1,7 @@
 <?php
+
+use MarsLib\Scaffold\Common\Array2Xml;
+
 define('CODE_SUCC', 0);
 define('CODE_ERR_OTHER', 1);
 define('CODE_ERR_AUTH', 100);
@@ -81,4 +84,26 @@ function read_file($path)
     }
     fclose($handle);
     return $data;
+}
+
+function xml2array($xml_string)
+{
+    $xml = simplexml_load_string($xml_string);
+    $json = json_encode($xml);
+    $array = json_decode($json,TRUE);
+    return $array;
+}
+
+function array2xml($array, $root_warp = false)
+{
+    $xml = Array2Xml::convert($array);
+    $xml = preg_split('/\n/', $xml);
+    array_shift($xml);
+    array_pop($xml);
+    $re = $xml[0];
+    if(!$root_warp) {
+        $re = str_replace('<root>', '', $re);
+        $re = str_replace('</root>', '', $re);
+    }
+    return $re;
 }
