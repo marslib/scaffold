@@ -16,7 +16,7 @@
         "ext-json": "*",
         "mongodb/mongodb": "^1.4",
         "seld/jsonlint": "^1.7",
-        "symfony/http-foundation": "^4.1"
+        "wikia/prometheus_client_php": "^0.9.2"
     },
     "autoload": {
         "psr-4": {
