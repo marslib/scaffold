@@ -107,3 +107,30 @@ function array2xml($array, $root_warp = false)
     }
     return $re;
 }
+
+
+function applyFilter ($array, $minSimilarity = 90) {
+    $result = [];
+
+    foreach ($array as $outerValue) {
+        $append = true;
+        foreach ($result as $key => $innerValue) {
+            $similarity = null;
+            similar_text($innerValue, $outerValue, $similarity);
+            if ($similarity >= $minSimilarity) {
+                if (strlen($outerValue) > strlen($innerValue)) {
+                    // always keep the longer one
+                    $result[$key] = $outerValue;
+                }
+                $append = false;
+                break;
+            }
+        }
+
+        if ($append) {
+            $result[] = $outerValue;
+        }
+    }
+
+    return $result;
+}

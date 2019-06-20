@@ -388,3 +388,34 @@ function array_get_by_keys($arr, $keys = []) {
     }
     return $tmp;
 }
+
+/**
+ * @desc 一维数组根据相似度评分去重
+ * @var array $array
+ * @var integer $minSimilarity
+ * @return array
+ */
+function apply_similar($array, $minSimilarity = 90) {
+    $result = [];
+
+    foreach ($array as $outerValue) {
+        $append = true;
+        foreach ($result as $key => $innerValue) {
+            $similarity = null;
+            similar_text($innerValue, $outerValue, $similarity);
+            if ($similarity >= $minSimilarity) {
+                if (strlen($outerValue) > strlen($innerValue)) {
+                    $result[$key] = $outerValue;
+                }
+                $append = false;
+                break;
+            }
+        }
+
+        if ($append) {
+            $result[] = $outerValue;
+        }
+    }
+
+    return $result;
+}
